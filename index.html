@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookShelf-Apps</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300&display=swap" rel="stylesheet" />
+</head>
+
+<body oncontextmenu="return false">
+    <div class="app">
+        <header>
+            <h1>BookShelf App</h1>
+        </header>
+        <main>
+            <div class="add-book cf">
+                <form action="" autocomplete="off" id="form">
+                    <div class="form-judul">
+                        <label for="judul">Judul</label><br />
+                        <input type="text" id="judul" name="judul" maxlength="250" value="" placeholder="Judul"
+                            required />
+                    </div>
+                    <div class="form-tahun">
+                        <label for="tahun">Tahun</label><br />
+                        <input type="number" id="tahun" name="tahun" maxlength="4" value="" placeholder="Tahun"
+                            required />
+                    </div>
+                    <div class="form-penulis">
+                        <label for="penulis">Penulis</label><br />
+                        <input type="text" id="penulis" name="penulis" maxlength="250" value="" placeholder="Penulis"
+                            required />
+                    </div>
+                    <div class="form-status">
+                        <input type="checkbox" id="isCompleted" name="isCompleted" value="" />
+                        <label for="isCompleted">Buku Selesai Dibaca ?</label>
+                    </div>
+                    <button type="submit" class="bg-primary">Tambah</button>
+                </form>
+            </div>
+            <div class="edit-book cf" hidden>
+                <form action="" autocomplete="off" id="edit-form">
+                    <input type="hidden" id="id-book" required />
+                    <div class="form-judul">
+                        <label for="edit-judul">Judul</label><br />
+                        <input type="text" id="edit-judul" name="edit-judul" maxlength="250" value=""
+                            placeholder="Judul" required />
+                    </div>
+                    <div class="form-tahun">
+                        <label for="edit-tahun">Tahun</label><br />
+                        <input type="number" id="edit-tahun" name="edit-tahun" maxlength="4" value=""
+                            placeholder="Tahun" required />
+                    </div>
+                    <div class="form-penulis">
+                        <label for="edit-penulis">Penulis</label><br />
+                        <input type="text" id="edit-penulis" name="edit-penulis" maxlength="250" value=""
+                            placeholder="Penulis" required />
+                    </div>
+                    <div class="form-status">
+                        <input type="checkbox" id="edit-isCompleted" name="edit-isCompleted" value="" />
+                        <label for="edit-isCompleted">Buku Selesai Dibaca ?</label>
+                    </div>
+                    <button type="submit" class="bg-primary" id="editBtn">Edit</button>
+                    <button type="button" id="cancelBtn" onclick="cancelEdit()">Cancel</button>
+                </form>
+            </div>
+            <div class="content">
+                <div class="search-book">
+                    <form action="" autocomplete="off" id="form-search">
+                        <input type="text" id="search" name="search" maxlength="250" value=""
+                            placeholder="Cari Judul Buku" onkeyup="searchBook()" />
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </form>
+                </div>
+                <div class="show">
+                    <article class="unfinished-book">
+                        <h1>Buku Belum Selesai Dibaca</h1>
+                        <div id="unfinished-book">
+                        </div>
+                    </article>
+                    <article class="finished-book">
+                        <h1>Buku Selesai Dibaca</h1>
+                        <div id="finished-book">
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </main>
+        <footer></footer>
+    </div>
+    <script src="https://kit.fontawesome.com/e23be2a30e.js" crossorigin="anonymous"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
